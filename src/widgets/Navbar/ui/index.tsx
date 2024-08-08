@@ -27,8 +27,8 @@ export const Navbar = ({
     };
 
     return (
-        <div className="container mx-auto px-4 max-w-full lg:max-w-screen-xl h-[60px] shadow-sm bg-white text-slate-900 font-poppins">
-            <div className="flex items-center justify-between h-full">
+        <div className="fixed w-full z-50 px-4 h-[60px] shadow-sm bg-white text-slate-900 font-poppins">
+            <div className="container mx-auto max-w-screen-xl flex items-center justify-between h-full">
                 <div className="text-2xl font-bold flex items-center">
                 <svg
                         className="w-14"
@@ -81,7 +81,6 @@ export const Navbar = ({
                     </svg>
                 </div>
                 <div className="flex items-center">
-                    <LanguageSwitcher className="mr-4" />
                     <div className="hidden sm:flex ">
                             <div key="filials" onClick={onScrollToFilials} className='px-3 cursor-pointer hover:text-blue-400'>
                                 {t('Филиалы')}
@@ -93,6 +92,7 @@ export const Navbar = ({
                                 {t('Оставить заявку')}
                             </div>
                     </div>
+                    <LanguageSwitcher className="ml-4" />
                     <div className="sm:hidden">
                         <Button
                             icon={<MenuOutlined />}

@@ -38,7 +38,7 @@ const PartnersBanner = () => {
 
                             <div
                                 id="services"
-                                className="text-white text-center lg:text-left mb-6"
+                                className="text-white text-start lg:text-left mb-6"
                             >
                                 <h3 className="text-xl font-semibold mb-4">
                                     {t('Наши услуги')}

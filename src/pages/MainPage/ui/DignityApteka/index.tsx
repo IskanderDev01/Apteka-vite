@@ -34,18 +34,19 @@ export const DignityApteka = () => {
             text: 'Осуществляем бесплатную доставку ваших заказов.',
         },
     ];
+
     return (
-        <div className="container mx-auto max-w-screen-xl flex flex-col items-center py-8 px-4 md:px-8  bg-white rounded-lg">
-            <h2 className="text-5xl font-bold mb-10 text-center">
+        <div className="container mx-auto max-w-screen-xl flex flex-col py-8 px-4 md:px-8 bg-white rounded-lg">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 md:mb-10">
                 {t('Преимущества нашей аптеки')}
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {cardInfo.map((item) => (
-                    <div className="bg-white border border-gray-200 p-6 transform transition-transform ">
-                        <h3 className="text-2xl font-semibold mb-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+                {cardInfo.map((item, index) => (
+                    <div key={index} className="bg-white border border-gray-200 py-4 sm:py-6 md:py-8 transform transition-transform">
+                        <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3">
                             {t(item.title)}
                         </h3>
-                        <p className="text-gray-700">
+                        <p className="text-gray-700 text-sm sm:text-base">
                             {t(item.text)}
                         </p>
                     </div>

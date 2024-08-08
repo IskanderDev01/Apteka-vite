@@ -18,8 +18,8 @@ const emailJsQueryFn: BaseQueryFn<
     try {
         emailjs.init('P0_nFNU4dowWYF3tQ');
         await emailjs.send(
-            'service_k05x4q9',
-            'template_1db2mfq',
+            'service_gayvn0j',
+            'template_eumlexc',
             {
                 user_name: formData.user_name,
                 user_email: formData.user_email,

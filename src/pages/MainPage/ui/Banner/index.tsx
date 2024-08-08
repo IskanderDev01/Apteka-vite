@@ -13,7 +13,7 @@ export const Banner = ({
     };
 
     return (
-        <div className="container mx-auto max-w-screen-xl flex flex-col md:flex-row pt-12 md:pt-24 items-center">
+        <div className="container mx-auto max-w-screen-xl flex flex-col md:flex-row pt-20 md:pt-44 items-center">
             <div className="w-full md:w-1/2 flex flex-col items-center md:items-start px-4 md:px-8 lg:px-4">
                 <div className="font-bold text-3xl md:text-5xl lg:text-6xl pb-6 text-center md:text-left">
                     {t('Аптека «Ажинияз Каракалпак»').toString()}

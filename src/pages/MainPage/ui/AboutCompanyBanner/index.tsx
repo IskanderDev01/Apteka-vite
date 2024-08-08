@@ -15,7 +15,7 @@ export const AboutCompanyBanner = ({
                 <div className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight text-center lg:text-left">
                     {t('О нашей Аптеке').toString()}
                 </div>
-                <div className=" text-gray-400 text-base sm:text-lg md:text-xl lg:text-2xl pt-8 sm:pt-10 md:pt-12 lg:pt-14 pb-8 sm:pb-10 md:pb-12 lg:pb-14 leading-relaxed text-center lg:text-left">
+                <div className=" text-gray-400 text-base sm:text-lg md:text-xl lg:text-2xl pt-8 sm:pt-10 md:pt-12 lg:pt-8 pb-8 sm:pb-10 md:pb-12 lg:pb-14 leading-relaxed text-center lg:text-left">
                     {t(
                         'Наша первая аптека была открыта в 2017 году под названием «Ажинияз Нукус». С 2019 года мы предоставляем свои услуги под названием «Ажинияз Каракалпак».',
                     ).toString()}
