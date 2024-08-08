@@ -1,10 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-
-const { createApi  } = await import(
-    '@reduxjs/toolkit/query/react'
-);
-import { BaseQueryFn } from '@reduxjs/toolkit/query/react';
+import { BaseQueryFn, createApi } from '@reduxjs/toolkit/query/react';
 import emailjs from 'emailjs-com';
 
 interface FormData {
