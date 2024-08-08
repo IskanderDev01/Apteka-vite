@@ -1,5 +1,6 @@
 import Slider from "react-slick";
 import Apteka from "../../../../shared/assets/ajiniazAptek.jpg";
+import { useTranslation } from 'react-i18next'
 
 interface SlideProps {
   image: string | undefined;
@@ -115,10 +116,10 @@ export const Filials = () => {
       },
     ],
   };
-
+  const {t} = useTranslation()
   return (
     <div className="container mx-auto max-w-screen-xl pb-20 px-4">
-      <div className="text-center text-5xl pb-10 font-medium">Наши филиалы</div>
+      <div className="text-center text-5xl pb-10 font-medium">{t('Наши филиалы')}</div>
       <div className="relative py-5">
         <Slider {...settings} arrows={false} className="relative">
           {slides.map((item, index) => (

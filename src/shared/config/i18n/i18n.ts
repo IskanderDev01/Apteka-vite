@@ -4,17 +4,20 @@ import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 i18n
-    .use(Backend)
-    .use(LanguageDetector)
-    .use(initReactI18next)
+    .use(Backend) // для загрузки переводов с сервера
+    .use(LanguageDetector) // для определения языка пользователя
+    .use(initReactI18next) // интеграция с React
     .init({
-        fallbackLng: 'ru',
-        // debug: __IS_DEV__,
+        fallbackLng: 'ru', // язык по умолчанию
         interpolation: {
-            escapeValue: false,
+            escapeValue: false, // экранирование не требуется для React
         },
         backend: {
-            loadPath: '/locales/{{lng}}/{{ns}}.json',
+            loadPath: '/locales/{{lng}}/{{ns}}.json', // путь для загрузки переводов
+        },
+        detection: {
+            order: ['querystring', 'cookie', 'localStorage', 'sessionStorage', 'navigator', 'htmlTag'],
+            caches: ['cookie'],
         },
     });
 

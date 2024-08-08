@@ -1,17 +1,36 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import { BaseQueryFn, createApi } from '@reduxjs/toolkit/query/react';
+const { createApi  } = await import(
+    '@reduxjs/toolkit/query/react'
+);
+import { BaseQueryFn } from '@reduxjs/toolkit/query/react';
 import emailjs from 'emailjs-com';
 
+interface FormData {
+    user_name: string;
+    user_email: string;
+    phone: string;
+    message: string;
+}
 
 const emailJsQueryFn: BaseQueryFn<
-    any,
+    FormData,
     void,
     { status: string; error: Error }
-> = async () => {
+> = async (formData) => {
     try {
         emailjs.init('P0_nFNU4dowWYF3tQ');
+        const response = await emailjs.send(
+            'service_k05x4q9',
+            'template_1db2mfq',
+            {
+                user_name: formData.user_name,
+                user_email: formData.user_email,
+                phone: formData.phone,
+                message: formData.message,
+            },
+        );
         return { data: undefined };
     } catch (error) {
         return { error: { status: 'CUSTOM_ERROR', error: error as Error } };

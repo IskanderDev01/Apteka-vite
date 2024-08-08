@@ -31,39 +31,39 @@ export const FormApplication = () => {
     };
 
     return (
-        <div className=' w-full'>
-            <div className="w-full flex justify-center items-center p-4 sm:p-8 lg:p-10">
+        <div className='w-full'>
+            <div className="w-full flex justify-center items-center p-2 sm:p-4 lg:p-6">
                 <Form
                     form={form}
                     name="contactForm"
                     onFinish={onFinish}
                     validateMessages={validateMessages}
-                    className="w-full max-w-lg bg-white shadow-lg p-6 sm:p-8 rounded-lg"
+                    className="w-full max-w-md bg-white shadow-md p-4 sm:p-6 rounded-lg"
                     layout="vertical"
                 >
-                    <div className="text-xl mb-4 text-center font-semibold">
-                        {t('Оставить заявку').toString()}
+                    <div className="text-lg mb-3 text-center font-semibold">
+                        {t('Оставить заявку')}
                     </div>
                     <Form.Item
                         name="user_name"
                         label={t('Имя').toString()}
                         rules={[{ required: true }]}
                     >
-                        <Input className="p-2 border rounded-md focus:ring-2 focus:ring-red-500" />
+                        <Input className="p-1 border rounded-md focus:ring-2" />
                     </Form.Item>
                     <Form.Item
                         name="user_email"
                         label="Email"
                         rules={[{ type: 'email', required: true }]}
                     >
-                        <Input className="p-2 border rounded-md focus:ring-2 focus:ring-red-500" />
+                        <Input className="p-1 border rounded-md focus:ring-2" />
                     </Form.Item>
                     <Form.Item
                         name="phone"
                         label={t('Телефон').toString()}
                         rules={[{ required: true }]}
                     >
-                        <Input className="p-2 border rounded-md focus:ring-2 focus:ring-red-500" />
+                        <Input className="p-1 border rounded-md focus:ring-2" />
                     </Form.Item>
                     <Form.Item
                         name="message"
@@ -71,8 +71,8 @@ export const FormApplication = () => {
                         rules={[{ required: true }]}
                     >
                         <Input.TextArea
-                            className="p-2 border rounded-md focus:ring-2 focus:ring-red-500"
-                            rows={4}
+                            className="p-1 border rounded-md focus:ring-2"
+                            rows={3}
                         />
                     </Form.Item>
                     <Form.Item>
@@ -81,7 +81,7 @@ export const FormApplication = () => {
                             danger
                             htmlType="submit"
                             loading={loading}
-                            className="w-full bg-red-500 hover:bg-red-600 focus:ring-2 focus:ring-red-500 text-white p-2 rounded-md"
+                            className="w-full bg-red-500 hover:bg-red-600 focus:ring-2 text-white p-1 rounded-md"
                         >
                             {t('Отправить').toString()}
                         </Button>
@@ -91,4 +91,3 @@ export const FormApplication = () => {
         </div>
     );
 };
-

@@ -3,9 +3,9 @@ import aptekaJpg from '../../../../shared/assets/ajiniazAptek.jpg';
 import { Button } from 'antd'
 
 export const AboutCompanyBanner = ({
-    onScrollToPartners,
+    onScrollToFounder,
 }: {
-    onScrollToPartners: () => void;
+    onScrollToFounder: () => void;
 }) => {
     const { t } = useTranslation();
 
@@ -15,14 +15,14 @@ export const AboutCompanyBanner = ({
                 <div className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight text-center lg:text-left">
                     {t('О нашей Аптеке').toString()}
                 </div>
-                <div className="font-medium text-gray-400 text-base sm:text-lg md:text-xl lg:text-2xl pt-8 sm:pt-10 md:pt-12 lg:pt-14 pb-8 sm:pb-10 md:pb-12 lg:pb-14 leading-relaxed text-center lg:text-left">
+                <div className=" text-gray-400 text-base sm:text-lg md:text-xl lg:text-2xl pt-8 sm:pt-10 md:pt-12 lg:pt-14 pb-8 sm:pb-10 md:pb-12 lg:pb-14 leading-relaxed text-center lg:text-left">
                     {t(
-                        'Наша аптека впервые открылась в 2017 году под названием "АЖИНИЯЗ-НУКУС". Начиная с 2019 года предоставляют услуги под названием "АЖИНИЯЗ КАРАКАЛПАК".',
+                        'Наша первая аптека была открыта в 2017 году под названием «Ажинияз Нукус». С 2019 года мы предоставляем свои услуги под названием «Ажинияз Каракалпак».',
                     ).toString()}
                 </div>
                 <div className="flex justify-center lg:justify-start">
                     <Button
-                        onClick={onScrollToPartners}
+                        onClick={onScrollToFounder}
                         type="primary"
                         danger
                         className="mt-4 w-56 sm:mt-6 md:mt-7 p-4 sm:p-6 md:p-7 px-6 sm:px-8 md:px-10 text-base sm:text-lg md:text-xl"
