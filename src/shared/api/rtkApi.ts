@@ -21,7 +21,7 @@ const emailJsQueryFn: BaseQueryFn<
 > = async (formData) => {
     try {
         emailjs.init('P0_nFNU4dowWYF3tQ');
-        const response = await emailjs.send(
+        await emailjs.send(
             'service_k05x4q9',
             'template_1db2mfq',
             {
