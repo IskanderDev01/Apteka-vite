@@ -7,16 +7,19 @@ const tg = window.Telegram.WebApp;
 function App() {
     
     useEffect(() => {
-        // Проверяем, открыто ли приложение на мобильном устройстве
+        // Проверяем, открыто ли приложение на компьютере (не мобильное устройство)
         const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-        if (isMobile) {
-            // Можно перенаправить пользователя на другую страницу или показать сообщение
-            document.body.innerHTML = '<h1>Это приложение доступно только на компьютере</h1>';
+        if (!isMobile) {
+            // Если устройство не мобильное, показываем сообщение или перенаправляем пользователя
+            document.body.innerHTML = '<h1>Это приложение доступно только на мобильных устройствах</h1>';
+            // Или перенаправляем пользователя на другую страницу
+            // window.location.href = 'https://example.com';
         } else {
-            // Если не мобильное устройство, делаем Telegram WebApp ready
+            // Если мобильное устройство, делаем Telegram WebApp ready
             tg.ready();
         }
     }, []);
+    
     return (
         <div className="min-h-screen bg-cover">
             <Suspense fallback="">
