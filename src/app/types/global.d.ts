@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 declare module '*.scss' {
     interface IClassNames {
-        [className: string]: string
+        [className: string]: string;
     }
     const classNames: IClassNames;
     export = classNames;
@@ -26,3 +27,4 @@ declare module '*.webp' {
     const value: string;
     export default value;
 }
+

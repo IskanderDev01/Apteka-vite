@@ -22,20 +22,17 @@ const PartnersBanner = () => {
                                     {t('Контактная информация')}
                                 </h2>
                                 <p className="mb-2">
-                                    {t('Телефон')}: +998-73-133-33-33
+                                    {t('Телефон')}: +998 88-561-01-80
                                 </p>
                                 <p className="mb-2">
-                                    {t('Электронная почта')}: contact@pharmacy.com
+                                    {t('Электронная почта')}: ajqapteka@gmail.com
                                 </p>
                                 <p className="mb-2">
-                                    {t('Адрес')}: ул. Примерная, 123, Москва,
-                                    Россия
+                                    {t('Адрес')}: просп. Ерназара Алакоза, 134
                                 </p>
                                 <p>{t('Часы работы')}:</p>
-                                <p className="mb-2">{t('Пн-Пт: 9:00 - 18:00')}</p>
-                                <p>{t('Сб-Вс: 10:00 - 16:00')}</p>
+                                <p className="mb-2">9:00 - 21:00</p>
                             </div>
-
                             <div
                                 id="services"
                                 className="text-white text-start lg:text-left mb-6"
