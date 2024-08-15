@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useSubmitFormMutation } from '@/shared/api/rtkApi'
+import { useSubmitFormMutation } from '@/shared/api/rtkApi';
 import { Button, Form, Input, message } from 'antd';
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next';
 
 export const FormApplication = () => {
-    const {t} = useTranslation()
-    const [submitForm] = useSubmitFormMutation();
+    const { t } = useTranslation();
+    const [submitForm, {isLoading}] = useSubmitFormMutation();
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
 
@@ -31,7 +31,7 @@ export const FormApplication = () => {
     };
 
     return (
-        <div className='w-full'>
+        <div className="w-full">
             <div className="w-full flex justify-center items-center p-2 sm:p-4 lg:p-6">
                 <Form
                     form={form}
@@ -77,6 +77,7 @@ export const FormApplication = () => {
                     </Form.Item>
                     <Form.Item>
                         <Button
+                            disabled={isLoading}
                             type="primary"
                             danger
                             htmlType="submit"

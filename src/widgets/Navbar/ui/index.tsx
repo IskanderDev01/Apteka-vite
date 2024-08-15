@@ -8,9 +8,11 @@ interface NavbarProps {
     onScrollToPartners: () => void;
     onScrollToFounder: () => void;
     onScrollToFilials: () => void;
+    onScrollTop: () => void;
 }
 
 export const Navbar = ({
+    onScrollTop,
     onScrollToPartners,
     onScrollToFounder,
     onScrollToFilials,
@@ -31,7 +33,8 @@ export const Navbar = ({
             <div className="container mx-auto max-w-screen-xl flex items-center justify-between h-full">
                 <div className="text-2xl font-bold flex items-center">
                 <svg
-                        className="w-14"
+                        onClick={onScrollTop}
+                        className="w-14 cursor-pointer"
                         version="1.1"
                         viewBox="0 0 900 900"
                         width="1280"

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useRef } from 'react';
 import { AboutCompanyBanner } from '../AboutCompanyBanner';
 import { Banner } from '../Banner';
@@ -13,9 +14,12 @@ export const MainPage = () => {
     const founderRef = useRef<HTMLDivElement | null>(null);
     const filialsRef = useRef<HTMLDivElement | null>(null);
 
+    const scrollOffset = -80;
+    const scrollHistory = -30;
     const handleScrollFilials = () => {
         if (filialsRef.current) {
-            filialsRef.current.scrollIntoView({ behavior: 'smooth' });
+            const topPosition = filialsRef.current.offsetTop + scrollOffset;
+            window.scrollTo({ top: topPosition, behavior: 'smooth' });
         }
     };
 
@@ -27,7 +31,8 @@ export const MainPage = () => {
 
     const handleScrollToFounder = () => {
         if (founderRef.current) {
-            founderRef.current.scrollIntoView({ behavior: 'smooth' });
+            const topPosition = founderRef.current.offsetTop + scrollHistory;
+            window.scrollTo({ top: topPosition, behavior: 'smooth' });
         }
     };
 
@@ -41,6 +46,7 @@ export const MainPage = () => {
                 onScrollToPartners={handleScrollToPartners}
                 onScrollToFilials={handleScrollFilials}
                 onScrollToFounder={handleScrollToFounder}
+                onScrollTop = {handleScrollToTop}
             />
             <Banner onScrollToPartners={handleScrollToPartners} />
             <AboutCompanyBanner onScrollToFounder={handleScrollToFounder} />
@@ -55,8 +61,8 @@ export const MainPage = () => {
                 <PartnersBanner />
             </div>
             <Button
-    onClick={handleScrollToTop}
-    className="
+                onClick={handleScrollToTop}
+                className="
         fixed 
         bottom-4 
         right-4 
@@ -74,13 +80,12 @@ export const MainPage = () => {
         lg:bottom-8 lg:right-8
         
     "
-    aria-label="Scroll to top"
-    shape="circle"
-    size="large"
->
-    ↑
-</Button>
-
+                aria-label="Scroll to top"
+                shape="circle"
+                size="large"
+            >
+                ↑
+            </Button>
         </div>
     );
 };
