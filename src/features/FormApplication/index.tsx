@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 export const FormApplication = () => {
     const { t } = useTranslation();
-    const [submitForm, {isLoading}] = useSubmitFormMutation();
+    const [submitForm, { isLoading }] = useSubmitFormMutation();
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
 
@@ -71,7 +71,7 @@ export const FormApplication = () => {
                         rules={[{ required: true }]}
                     >
                         <Input.TextArea
-                            className="p-1 border rounded-md focus:ring-2"
+                            className="p-1 border rounded-md focus:ring-2 resize-none max-h-32"
                             rows={3}
                         />
                     </Form.Item>
